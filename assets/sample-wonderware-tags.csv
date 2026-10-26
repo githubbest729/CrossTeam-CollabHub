@@ -1,0 +1,6 @@
+TagName,Description,PLC_Address,Protocol,DataType,Scope
+PMP101_RUN,Pump 101 Run Status,40001,ModbusTCP,BOOL,Read
+PMP101_SPD,Pump 101 Speed SP,40002,ModbusTCP,INT,Read/Write
+PMP101_AMPS,Pump 101 Motor Current,30001,ModbusTCP,REAL,Read
+RES01_LVL,Reservoir 1 Level,30010,ModbusTCP,REAL,Read
+CHL02_TEMP,Chiller 2 Supply Temp,ns=2;s=CHL02.Temp,OPC UA,REAL,Read
