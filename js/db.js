@@ -13,8 +13,8 @@ const DB={
  uid(p){return p+'-'+Date.now().toString(36)+Math.random().toString(36).slice(2,5)},
  async log(msg){await this.put('activity_log',{id:this.uid('LOG'),ts:Date.now(),msg})},
  async sha256(buf){const h=await crypto.subtle.digest('SHA-256',buf);return [...new Uint8Array(h)].map(b=>b.toString(16).padStart(2,'0')).join('').slice(0,16)},
- async saveFile(assetId,file){const buf=await file.arrayBuffer();const sum=await this.sha256(buf);let mode='idb';
-  try{if(navigator.storage&&navigator.storage.getDirectory){const root=await navigator.storage.getDirectory();const fh=await root.getFileHandle(assetId,{create:true});const w=await fh.createWritable();await w.write(buf);await w.close();mode='opfs'}}catch(e){mode='idb'}
+ async saveFile(assetId,file,force){const buf=await file.arrayBuffer();const sum=await this.sha256(buf);let mode='idb';
+  try{if(!force&&navigator.storage&&navigator.storage.getDirectory){const root=await navigator.storage.getDirectory();const fh=await root.getFileHandle(assetId,{create:true});const w=await fh.createWritable();await w.write(buf);await w.close();mode='opfs'}}catch(e){mode='idb'}
   if(mode==='idb'){const C=1<<20;for(let i=0,n=0;i<buf.byteLength;i+=C,n++)await this.put('assets_chunks',{id:assetId+':'+n,assetId,i:n,data:buf.slice(i,i+C)});}
   return{checksum:sum,storage:mode,size:buf.byteLength}},
  async loadFile(meta){if(meta.storage==='opfs'){const root=await navigator.storage.getDirectory();const fh=await root.getFileHandle(meta.id);return await fh.getFile()}

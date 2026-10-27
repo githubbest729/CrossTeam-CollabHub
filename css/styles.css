@@ -27,3 +27,16 @@ td.cut{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
 @media(max-width:760px){.ms2{grid-template-columns:1fr}}
 
 .k{color:var(--ac)}code.muted{color:var(--mut);font-size:11px}
+
+main{max-width:1440px!important;width:min(1440px,95vw)}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:#0f172a}::-webkit-scrollbar-thumb{background:#334155;border-radius:6px}*{scrollbar-color:#334155 #0f172a}
+.ic{width:15px;height:15px;vertical-align:-3px;margin-right:5px}.tw td:last-child button{padding:4px 8px;margin-right:2px}td:last-child{white-space:nowrap}
+code.hash{background:#1786ff33;color:var(--ac);padding:1px 6px;border-radius:99px;cursor:pointer}
+.cfu{display:inline-flex;align-items:center;gap:6px;border:1px dashed var(--ac);border-radius:6px;padding:6px 12px;cursor:pointer;color:var(--mut);max-width:260px;overflow:hidden;white-space:nowrap}.cfu.hv,.cfu:hover{box-shadow:0 0 10px var(--ac);color:var(--tx)}
+select.sel-ok{border-color:#10b981;color:#10b981;background:#10b98120}select.sel-warn{border-color:#f59e0b;color:#f59e0b;background:#f59e0b20}select.sel-bad{border-color:#ef4444;color:#ef4444;background:#ef444420}select.sel-mute{border-color:#94a3b8;color:#94a3b8;background:#94a3b81a}
+.card{border-top:2px solid var(--ac);box-shadow:inset 0 1px 8px #0003}.bar i{transition:width .4s;box-shadow:0 0 6px var(--ac)}.kpi .ic{width:20px;height:20px;color:var(--mut)}
+.nd{fill:var(--bg);stroke:var(--line);stroke-width:1.5}.nd.on{stroke:var(--ac);stroke-width:3}.nt{fill:var(--tx);font:600 14px system-ui}.ns{fill:var(--mut);font:12px system-ui}
+:root[data-theme=blue]{--bg:#0b1b33;--panel:#10264a;--line:#24457a;--ac:#3b9cff}:root[data-theme=day]{--bg:#fff;--panel:#f4f6f8;--line:#111;--tx:#000;--mut:#333;--ac:#0050b3}
+body.compact td,body.compact th{padding:3px 6px}body.compact .card{padding:8px}
+#tsp{position:fixed;z-index:20;border-radius:8px;box-shadow:0 0 0 9999px #000a,0 0 12px var(--ac);pointer-events:none;border:2px solid var(--ac)}#tc{position:fixed;z-index:21;bottom:20px;left:50%;transform:translateX(-50%);width:min(520px,92vw)}
+@media(max-width:767px){main .tw table,main .tw tr,main .tw td{display:block}main .tw tr:has(th){display:none}main .tw tr{border:1px solid var(--line);border-radius:8px;margin-bottom:8px;padding:6px}main .tw td{border:0;white-space:normal}main .tw td::before{content:attr(data-l)": ";color:var(--mut)}main .tw td.cut{max-width:none}}
