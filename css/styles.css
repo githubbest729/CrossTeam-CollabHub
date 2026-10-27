@@ -45,3 +45,7 @@ body.compact td,body.compact th{padding:3px 6px}body.compact .card{padding:8px}
 .logbox{max-height:220px;overflow-y:auto}.logbox div{padding:3px 0;border-bottom:1px solid var(--line)}.logbox code.hash{font-family:ui-monospace,monospace;font-size:11px}
 .fpill{background:#22d3ee22;border:1px solid var(--ac);color:var(--ac);padding:3px 12px;border-radius:99px}.fpill a{cursor:pointer;margin-left:6px;font-weight:700;color:inherit}
 .card.okc{border-color:#10b981;border-top-color:#10b981}
+
+.quota{height:26px;width:150px}.quota i{top:auto;bottom:0;height:4px;opacity:1;border-radius:2px;min-width:6px}.quota span{display:block;padding:0 8px 4px;line-height:20px}
+.vtag{display:inline-block;margin:8px 0 10px}
+.sb{grid-template-columns:1fr}@media(min-width:600px){.sb{grid-template-columns:repeat(2,1fr)}}@media(min-width:1100px){.sb{grid-template-columns:repeat(5,minmax(0,1fr))}}

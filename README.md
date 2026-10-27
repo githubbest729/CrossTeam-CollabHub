@@ -11,6 +11,8 @@ v5: wider layout, compact action icons + hash badges, dark scrollbars, seeded fi
 
 v6: upgrade.js merged into app.js; full-offline precache list; filter pill + Done/Active/Pending map counters; QA/HSE progress + locked/unlocked states; scrollable broadcast log with Clear/Export; storage pill sync. Replace the placeholder cert fingerprint in .well-known/assetlinks.json with your signing key SHA-256 before TWA use.
 
+v7: storage pill restructured + live sync, 5x2 storage grid, QA/HSE spacing and single locked status, vault sorted by ID, prerequisite warning badge.
+
 Modules: Dashboard, Asset Vault (OPFS/IndexedDB, SHA-256, tag inspector), Milestones, Blockers, QA/HSE Gate (Annexure-SCT-HR-001), Data (archive, gzip snapshot export/import).
 Storage: IndexedDB `CollabHubDB_v1`, `navigator.storage.persist()`, quota bar. Snapshots exclude binary attachments.
 Note: the service worker uses root-relative `/icons/*` static routing; adjust if hosted in a sub-path. Set real package fingerprints in `.well-known/assetlinks.json` if wrapping as TWA.
