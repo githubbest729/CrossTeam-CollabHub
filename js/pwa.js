@@ -1,7 +1,7 @@
 let deferred,reg;const $=s=>document.querySelector(s);
 function toast(msg,action,cb){const t=$('#toast');t.hidden=false;t.innerHTML=msg+(action?` <button id="ta">${action}</button>`:'');if(action)$('#ta').onclick=cb;else setTimeout(()=>t.hidden=true,3500)}
 async function quota(){try{if(navigator.storage&&navigator.storage.persist)await navigator.storage.persist();
- if(navigator.storage&&navigator.storage.estimate){const e=await navigator.storage.estimate();const p=e.quota?e.usage/e.quota*100:0;$('#qfill').style.width=Math.max(p,1)+'%';$('#qtxt').textContent=(e.usage/1048576).toFixed(1)+' MB'}}catch(e){}}
+ if(navigator.storage&&navigator.storage.estimate){const e=await navigator.storage.estimate();const p=e.quota?e.usage/e.quota*100:0;$('#qfill').style.width=Math.max(p,1)+'%';$('#qtxt').textContent=(e.usage/1048576).toFixed(2)+' MB / '+(e.quota/1073741824).toFixed(0)+' GB'}}catch(e){}}
 function badge(n){if('setAppBadge' in navigator){n>0?navigator.setAppBadge(n).catch(()=>{}):navigator.clearAppBadge().catch(()=>{})}}
 async function shareText(title,text){if('share' in navigator){try{await navigator.share({title,text})}catch(e){}}else{await navigator.clipboard?.writeText(text);toast('Copied to clipboard')}}
 async function pickContacts(){if('contacts' in navigator&&'ContactsManager' in window){try{return await navigator.contacts.select(['name','email','tel'],{multiple:true})}catch(e){return[]}}toast('Contact Picker not supported');return[]}
