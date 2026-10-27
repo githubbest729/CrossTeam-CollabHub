@@ -5,7 +5,7 @@ let _db;
 const DB={
  open(){if(_db)return Promise.resolve(_db);return new Promise((res,rej)=>{const r=indexedDB.open(DB_NAME,1);
   r.onupgradeneeded=()=>{const d=r.result;STORES.forEach(s=>{const st=d.createObjectStore(s,{keyPath:'id'});(IDX[s]||[]).forEach(([n,k])=>st.createIndex(n,k))})};
-  r.onsuccess=()=>{_db=r.result;res(_db)};r.onerror=()=>rej(r.error)})},
+  r.onsuccess=()=>{_db=r.result;_db.onversionchange=()=>{_db.close();_db=null;if(window.toast)toast('Database was updated in another tab — please reload this page')};res(_db)};r.onblocked=()=>{if(window.toast)toast('Close other CollabHub tabs to finish updating the database')};r.onerror=()=>{if(window.toast)toast('Database error: '+(r.error&&r.error.message)+' — private mode or blocked storage?');rej(r.error)}})},
  async run(s,mode,fn){const d=await this.open();return new Promise((res,rej)=>{const t=d.transaction(s,mode);const rq=fn(t.objectStore(s));t.oncomplete=()=>res(rq&&rq.result);t.onerror=()=>rej(t.error)})},
  all(s){return this.run(s,'readonly',o=>o.getAll())},get(s,id){return this.run(s,'readonly',o=>o.get(id))},
  put(s,v){return this.run(s,'readwrite',o=>o.put(v))},del(s,id){return this.run(s,'readwrite',o=>o.delete(id))},
