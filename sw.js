@@ -1,4 +1,4 @@
-const V='collabhub-v3',SHELL=['./','index.html','offline.html','css/styles.css','js/db.js','js/seed.js','js/pwa.js','js/app.js','js/upgrade.js','favicon.svg','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','assets/sample-wonderware-tags.csv'];
+const V='collabhub-v4',SHELL=['./','index.html','offline.html','css/styles.css','js/db.js','js/seed.js','js/pwa.js','js/app.js','js/upgrade.js','favicon.svg','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','assets/sample-wonderware-tags.csv'];
 self.addEventListener('install',e=>{
  if(e.addRoutes){try{e.addRoutes({condition:{urlPattern:new URLPattern({pathname:'/icons/*'})},source:'cache'})}catch(x){}}
  e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL)))});

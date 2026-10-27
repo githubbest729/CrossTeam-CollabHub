@@ -25,3 +25,5 @@ td.cut{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap
 .ms2{display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .ms2>.card:last-child:nth-child(odd){grid-column:1/-1}
 @media(max-width:760px){.ms2{grid-template-columns:1fr}}
+
+.k{color:var(--ac)}code.muted{color:var(--mut);font-size:11px}
