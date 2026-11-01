@@ -2,7 +2,7 @@
 
 # ⚙️ CrossTeam CollabHub PWA
 ### Centralized Asset, Milestone & Compliance Hub for SCADA & Industrial Automation
-**Al Gurg Automation and Controls (AGAC) — Dubai, U.A.E.**
+** Dubai, U.A.E.**
 
 [![PWA Ready](https://img.shields.io/badge/PWA-Installable-22d3ee?style=for-the-badge&logo=pwa&logoColor=0f172a)](https://web.dev/progressive-web-apps/)
 [![Offline First](https://img.shields.io/badge/Architecture-Offline%20First-10b981?style=for-the-badge&logo=indexeddb&logoColor=fff)](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
